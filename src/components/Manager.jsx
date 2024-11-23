@@ -19,17 +19,12 @@ const Manager = () => {
   };
 
   const getPasswords = async () => {
-    let response = await fetch("http://localhost:3000/")
+    let response = await fetch("https://pass-ga4eofzka-mandeeps-projects-918346f9.vercel.app/")
     let passwords = await response.json()
     setPasswordArray(passwords)
   }
 
   useEffect(() => {
-    // let passwords = localStorage.getItem("passwords");
-
-    // if (passwords) {
-    //   setPasswordArray(JSON.parse(passwords));
-    // }
     getPasswords()
   }, []);
 
@@ -56,12 +51,9 @@ const Manager = () => {
       if (confirmed) {
         
         setPasswordArray([...passwordArray, { ...form, id: uuidv4() }]);
-        // localStorage.setItem(
-        //   "passwords",
-        //   JSON.stringify([...passwordArray, { ...form, id: uuidv4() }])
-        // );
+        
        
-        await fetch("http://localhost:3000/", 
+        await fetch("https://pass-ga4eofzka-mandeeps-projects-918346f9.vercel.app/", 
           { method: "POST", 
             headers : {"Content-Type" : "application/json"}, 
             body: JSON.stringify({ ...form, id: uuidv4()})
@@ -84,7 +76,7 @@ const Manager = () => {
       //   "passwords",
       //   JSON.stringify(passwordArray.filter((item) => item.id !== id))
       // );
-      let res = await fetch("http://localhost:3000/", 
+      let res = await fetch("https://pass-ga4eofzka-mandeeps-projects-918346f9.vercel.app/", 
         { method: "DELETE", 
           headers : {"Content-Type" : "application/json"}, 
           body: JSON.stringify({id})
@@ -97,7 +89,7 @@ const Manager = () => {
 
   const editPost = async (id) => {
     setForm({...passwordArray.filter((item) => item.id === id)[0], id: id});
-    await fetch("http://localhost:3000/", 
+    await fetch("https://pass-ga4eofzka-mandeeps-projects-918346f9.vercel.app/", 
       { method: "DELETE", 
         headers : {"Content-Type" : "application/json"}, 
         body: JSON.stringify({id:form.id})
