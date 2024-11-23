@@ -7,11 +7,11 @@ import Footer from './components/Footer'
 function App() {
 
   return (
-    <>
+    <div>
       <Navbar />
       <div className='min-h-[87vh]'><Manager /></div>
       <Footer />
-    </>
+    </div>
   )
 }
 

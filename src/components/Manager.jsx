@@ -111,7 +111,7 @@ const Manager = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   return (
-    <>
+    <div className="flex justify-center">
       <ToastContainer
         position="top-center"
         autoClose={100}
@@ -124,10 +124,10 @@ const Manager = () => {
         pauseOnHover
         theme="dark"
       />
-      <div className="absolute inset-0 -z-10 h-full w-full bg-green-100 bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
+      <div className="absolute inset-0 -z-10 h-full w-full bg-green-100 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] flex flex-col justify-center items-center">
         <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div>
       </div>
-      <div className="p-2 md:p-0 md:mycontainer min-h-[88.4vh]">
+      <div className="p-2 md:p-0 md:mycontainer min-h-[88.4vh] max-w-[400px] text-center flex flex-col items-center">
         <h1 className="text-4xl text font-bold text-center pt-5">
           <span className="text-green-700">&lt;</span>
           Pass
@@ -136,7 +136,7 @@ const Manager = () => {
         <p className="text-green-900 text-md md:text-xl text-center">
           Your own password manager!
         </p>
-        <div className="flex flex-col text-white p-4 gap-3 items-center">
+        <div className="flex flex-col text-white p-4 gap-3 justify-center">
           <input
             value={form.site}
             onChange={handleChange}
@@ -184,7 +184,7 @@ const Manager = () => {
 
           <button
             onClick={savePassword}
-            className="text-white flex justify-center items-center bg-green-500 rounded-full pl-2 pr-4 py-2 font-bold w-fit hover:bg-green-700 gap-2 border border-1 border-green-800"
+            className="text-white flex justify-center items-center bg-green-500 rounded-full pl-2 pr-4 py-2 font-bold w-fit hover:bg-green-700 gap-2 border border-1 border-green-800 mx-auto sm:mx-0 w-full"
           >
             <lord-icon
               src="https://cdn.lordicon.com/zrkkrrpl.json"
@@ -307,7 +307,7 @@ const Manager = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -32,7 +32,7 @@ app.post('/' , async (req, res) => {
     const password = req.body
     const db = client.db(dbName)
     const collection = db.collection('passwords')
-    const findResult = await collection.insertOne(password)
+    await collection.insertOne(password)
     res.send({
         message: "Succesfully inserted!"
     })

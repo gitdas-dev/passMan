@@ -22,10 +22,11 @@ const Navbar = () => {
             </a>
           </li>
         </ul> */}
-        <div className="flex justify-between">
+        <a href="https://github.com/gitdas-dev"><div className="flex justify-between hover:scale-105 hover:transition-all">
           <img className="py-6" src="public/icons/icons8-github.svg" alt="github logo" />
           <span className="text-white font-bold pt-10">GitHub</span>
         </div>
+        </a>
       </div>
     </nav>
   );
