@@ -13,7 +13,13 @@ const client = new MongoClient(url);
 
 const app = express();
 app.use(bodyparser.json())
-app.use(cors())
+
+const corsOptions = {
+    origin: 'https://pass-man-theta.vercel.app', // Replace with your allowed origin
+};
+
+app.use(cors(corsOptions));
+
 
 // Database Name
 const dbName = 'passMan';
